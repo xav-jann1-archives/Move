@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: scara_cpe_description
+    relative_path: urdf/scara_cpe.xacro
+    use_jade_xacro: true
+  SRDF:
+    relative_path: config/scara_cpe.srdf
+  CONFIG:
+    author_name: Xavier
+    author_email: xavier.jannin@cpe.fr
+    generated_timestamp: 1575649917

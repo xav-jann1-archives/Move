@@ -1,0 +1,5 @@
+controller_list:
+  - name: fake_scara_cpe_group_controller
+    joints:
+      - shoulder_1_joint
+      - shoulder_2_joint

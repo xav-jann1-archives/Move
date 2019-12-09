@@ -1,0 +1,12 @@
+<launch>
+
+<!-- Scara -->
+<include file="$(find scara_cpe_gazebo)/launch/gazebo_scara_playground.launch" />
+
+<!-- rviz -->
+<!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find scara_cpe_gazebo)/config/sim.rviz" /> -->
+
+<!-- Inverse Kinematics Service pour déplacer le bras -->
+<node pkg="scara_cpe_kinematics" type="ik_service_action_client.py" name="ik_service_action_client" />
+
+</launch>

@@ -1,0 +1,17 @@
+
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find scara_cpe_description)/urdf/scara_cpe.xacro" />
+
+	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> -->
+
+	<include file="$(find scara_cpe_robot)/launch/controller_manager.launch" />
+	<include file="$(find scara_cpe_robot)/launch/scara_meta_controller.launch" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node> -->
+	<node name="state_publisher_student" pkg="scara_cpe_robot" type="state_publisher_student.py" />
+
+
+	<!-- RViz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find scara_cpe_description)/config/scara_cpe.rviz"/>
+</launch>

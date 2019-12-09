@@ -1,0 +1,7 @@
+controller_manager_ns: ''
+controller_list:
+  - name: scara_cpe_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints: [shoulder_1_joint, shoulder_2_joint]

@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find scara_cpe_moveit)/launch/demo.launch"/>
+
+  <node name="moveit_test_poses" pkg="scara_cpe_apps" type="moveit_test_poses.py" respawn="false" output="screen">
+  </node>
+
+</launch>

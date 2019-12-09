@@ -1,0 +1,16 @@
+<launch>
+  <!-- Robot -->
+	<!-- <param name="robot_description" command="$(find xacro)/xacro.py $(find scara_cpe_description)/urdf/scara_cpe.xacro" /> -->
+
+  <!-- Controller -->
+	<include file="$(find scara_cpe_robot)/launch/controller_manager.launch" />
+	<include file="$(find scara_cpe_robot)/launch/scara_meta_controller.launch" />
+
+	<!-- Robot && State Publishers -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="state_publisher_student" pkg="scara_cpe_robot" type="state_publisher_student.py" />
+
+	<!-- Robot & MoveIt! & RViz -->
+  <include file="$(find scara_cpe_robot)/launch/moveit_planning_real.launch"/>
+
+</launch>

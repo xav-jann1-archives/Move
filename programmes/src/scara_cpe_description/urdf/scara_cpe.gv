@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"base_link" [label="base_link"];
+"link1" [label="link1"];
+"link2" [label="link2"];
+"end_link" [label="end_link"];
+"camera_link" [label="camera_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "base_fixed" [label="xyz: 0 0 0.035 \nrpy: 0 -0 0"]
+"base_fixed" -> "base_link"
+"base_link" -> "shoulder_1_joint" [label="xyz: 0 0.048 0 \nrpy: 0 -0 0"]
+"shoulder_1_joint" -> "link1"
+"link1" -> "shoulder_2_joint" [label="xyz: 0 0.08 0 \nrpy: 0 -0 0"]
+"shoulder_2_joint" -> "link2"
+"link2" -> "end_joint" [label="xyz: 0 0.047 -0.025 \nrpy: 0 -0 0"]
+"end_joint" -> "end_link"
+"world" -> "camera_fixed" [label="xyz: 0 -0.3 0.2 \nrpy: -1.8708 0 0"]
+"camera_fixed" -> "camera_link"
+}
